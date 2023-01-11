@@ -11,7 +11,7 @@ const NavBar = () => {
                     <Link to='/' style={{textDecoration: "none", color: "white"}}><Logo>Bruja Blanca</Logo></Link>
                 </Left>
                 <Center>
-                    <Link to='/category/9' style={{textDecoration: "none", color: "white"}}><MenuItem>Aceites</MenuItem></Link>
+                    <Link to='/category/Aceites' style={{textDecoration: "none", color: "white"}}><MenuItem>Aceites</MenuItem></Link>
                     <Link to='/category/1' style={{textDecoration: "none", color: "white"}}><MenuItem>Cristales</MenuItem></Link>
                     <Link to='/category/5' style={{textDecoration: "none", color: "white"}}><MenuItem>Libros</MenuItem></Link>
                 </Center>

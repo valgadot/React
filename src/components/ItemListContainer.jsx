@@ -1,10 +1,9 @@
 import ItemCount from "./ItemCount";
 import ItemList from "./ItemList";
-import {Wrapper} from './styledComponents';
-import customFetch from "../utils/customFetch";
+import customFetch from "../data/customFetch";
 import { useEffect, useState } from "react";
 import { useParams} from 'react-router';
-const {products} = require('../utils/products');
+const {products} = require('../data/products');
 
 const ItemListContainer = () => {
     const [datos, setDatos] = useState([]);
@@ -12,7 +11,7 @@ const ItemListContainer = () => {
 
     console.log(idCategory);
 
-    useEffect(() => { 
+    useEffect((idCategory) => { 
         customFetch(2000,products.filter(item => {
             if (idCategory === undefined) return item;
             return item.categoryId === parseInt(idCategory)

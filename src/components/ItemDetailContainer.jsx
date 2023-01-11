@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import {useParams} from "react-router";
-import customFetch from "../utils/customFetch";
+import customFetch from "../data/customFetch";
 import ItemDetail from "./ItemDetail";
-const {products} = require('../utils/products');
+const {products} = require('../data/products');
 
 const ItemDetailContainer = () => {
     const [dato, setDato] = useState({});
@@ -12,11 +12,18 @@ const ItemDetailContainer = () => {
         customFetch(2000, products.find(item => item.id === parseInt(idItem)))
         .then(result => setDato(result))
         .catch(err => console.log(err))
-    },[]);
+    },[idItem]);
 
     return (
-        <ItemDetail item={dato} />
-    );
-}
+        <div>
+            {
+                Object.keys(dato).length === 0
+                 ? <h2>Loading...</h2>
+                 : <ItemDetail item={dato}/>
+            }
+        
+        </div>
+    )
+};
 
 export default ItemDetailContainer;

@@ -1,3 +1,5 @@
+import React from 'react';
+import { Link } from "react-router-dom";
 import ItemCount from './ItemCount';
 import {DetailContainer, WrapperDetail, ImgContainer, ImageDetail, InfoContainer, Title, Desc, Price} from './styledComponents';
 
@@ -7,8 +9,8 @@ const ItemDetail = ({item}) => {
     }
 
     return (
-    <>
-    {
+        <>
+         {
     item && item.image
     ?
     <DetailContainer>
@@ -25,7 +27,11 @@ const ItemDetail = ({item}) => {
             <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
         </WrapperDetail>
     </DetailContainer>
-    :<p>Cargando...</p>
+    : <button className='btn btn-primary p-2'>
+        <Link to="/cart">
+            Go to cart
+        </Link>
+    </button>
 }
 </>
 );

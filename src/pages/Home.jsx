@@ -10,7 +10,9 @@ const Home = () => {
         <Routes>
             <Route path= '/' element={<ItemListContainer/>}/>
             <Route path='/category/:idCategory' elememt= {<ItemListContainer/>} />
-            <Route path='/item/idItem' element={<ItemDetailContainer/>}/> 
+            <Route path='/dato/:id' element={<ItemDetailContainer/>}/>
+            <Route path='/cart'></Route>
+            <Route path='*' element={<h2>Ruta no encontrada</h2>}/>
         </Routes>
         </BrowserRouter>
     );

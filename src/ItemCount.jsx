@@ -5,7 +5,7 @@ import {ProductAmountContainer, ProductAmount} from './styledComponents';
 
 const ItemCount = ({stock = 0, initial = 1, onAdd}) => {
     const [count, setCount] = useState(0); 
-    useEffect((initial) => {
+    useEffect(() => {
         setCount(initial);
     },[]);
     const increment = () => {
